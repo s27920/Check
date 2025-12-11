@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+      <UserSecretsId>07b3e251-9de0-4933-ad0c-ced3ff16c78a</UserSecretsId>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AWSSDK.S3" Version="4.0.7.9" />
+        <PackageReference Include="FluentValidation" Version="12.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="8.0.21" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.21" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.OAuth" Version="2.3.0" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.Json" Version="10.0.0-preview.4.25258.110" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.15" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.15" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.1" />
+        <PackageReference Include="OneOf" Version="3.0.271" />
+        <PackageReference Include="OpenAI" Version="2.7.0" />
+        <PackageReference Include="Postmark" Version="5.2.0" />
+        <PackageReference Include="RabbitMQ.Client" Version="7.2.0" />
+        <PackageReference Include="Scrutor" Version="7.0.0" />
+        <PackageReference Include="StackExchange.Redis" Version="2.10.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Migrations\" />
+        <Folder Include="Modules\Auth\Commands\DisableTwoFactor\" />
+        <Folder Include="Modules\Auth\Commands\EnableTwoFactor\" />
+        <Folder Include="Modules\Auth\Commands\ExternalLogin\" />
+        <Folder Include="Modules\Auth\Commands\GenerateApiKey\" />
+        <Folder Include="Modules\Auth\Commands\Login\" />
+        <Folder Include="Modules\Auth\Commands\Logout\" />
+        <Folder Include="Modules\Auth\Commands\RefreshToken\" />
+        <Folder Include="Modules\Auth\Commands\RequestPasswordReset\" />
+        <Folder Include="Modules\Auth\Commands\ResetPassword\" />
+        <Folder Include="Modules\Auth\Commands\RevokeApiKey\" />
+        <Folder Include="Modules\Auth\Commands\StartEmailVerification\" />
+        <Folder Include="Modules\Auth\Commands\VerifyEmail\" />
+        <Folder Include="Modules\Auth\Commands\VerifyTwoFactorLogin\" />
+        <Folder Include="Modules\Auth\Queries\CheckUserPermissions\" />
+        <Folder Include="Modules\Auth\Queries\GetApiKeys\" />
+        <Folder Include="Modules\Auth\Queries\GetUserByToken\" />
+        <Folder Include="Modules\Auth\Queries\GetUserSessions\" />
+        <Folder Include="Modules\Auth\Queries\SearchUsersByEmail\" />
+        <Folder Include="Modules\Auth\Shared\Configuration\" />
+        <Folder Include="Modules\Auth\Shared\Email\" />
+        <Folder Include="Modules\Auth\Shared\Exceptions\" />
+        <Folder Include="Modules\Auth\Shared\Jwt\" />
+        <Folder Include="Modules\Auth\Shared\Mappers\" />
+        <Folder Include="Modules\Auth\Shared\Middleware\" />
+        <Folder Include="Modules\Auth\Shared\Repositories\" />
+        <Folder Include="Modules\Auth\Shared\Utils\" />
+        <Folder Include="Modules\Cohort\Commands\Chat\" />
+        <Folder Include="Modules\Cohort\Commands\CohortManagement\" />
+        <Folder Include="Modules\Problem\Commands\CreateProblem\" />
+        <Folder Include="Modules\User\Commands\ChangePassword\" />
+        <Folder Include="Modules\User\Commands\SetEditorLayout\" />
+        <Folder Include="Modules\User\Commands\SetEditorTheme\" />
+        <Folder Include="Modules\User\Commands\SelectAvatar\" />
+        <Folder Include="Modules\User\Commands\UpdatePreferences\" />
+        <Folder Include="Modules\User\Commands\UpdateUsername\" />
+        <Folder Include="Modules\User\Queries\GetUserProfile\" />
+        <Folder Include="Modules\User\Queries\GetUserStatistics\" />
+        <Folder Include="Modules\User\Shared\Constants\" />
+        <Folder Include="Modules\User\Shared\Exceptions\" />
+        <Folder Include="Modules\User\Shared\Repositories\" />
+        <Folder Include="Modules\User\Shared\Services\" />
+        <Folder Include="Modules\User\Shared\Utils\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AlgoDuckShared\AlgoDuckShared.csproj" />
+    </ItemGroup>
+
+</Project>
